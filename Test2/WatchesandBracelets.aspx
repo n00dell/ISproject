@@ -111,53 +111,60 @@
         font-size: 18px;
     }
 
- .navbar-nav .nav-link:hover {
-            color: green;
+        .Pagebtns{
+             background-color: #4CAF50;
+ color: #fff;
+ padding: 10px 20px;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ transition: background-color 0.3s, color 0.3s;
+        }
+
+        .Pagebtns:hover{
+            background-color: #fff;
+color: #4CAF50;
         }
     </style>
 
     
-<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light justify-content-center">
+   <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light justify-content-center">
     <div class="container">
-        <a class="navbar-brand" runat="server" href="#">Your Logo</a>
+        <div class="logo"><a class="navbar-brand" runat="server" href="#">Logo</a></div>
+        
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between" id="navbarNav">
             <ul class="navbar-nav flex-grow-1">
                 <li class="nav-item active">
-                    <a class="nav-link" href="Index.aspx">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="Index.aspx">Home <span class="sr-only"></span></a>
                 </li>
                 
                 <li class="nav-item">
                     <a class="nav-link" href="Contact.aspx">Contact</a>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Shop
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="Clothes.aspx">Clothes</a></li>
-                        <li><a class="dropdown-item" href="WatchesandBracelets.aspx">Watches and bracelets</a></li>
-                        <li><a class="dropdown-item" href="Furniture.aspx">Furniture</a></li>
-                        <li><a class="dropdown-item" href="Curio.aspx">Curio</a></li>
-                    </ul>
-                </li>
+             
 
-                <!-- Add the login button here -->
-                <li class="nav-item">
-                    <a class="nav-link" href="Login.aspx">Login</a>
-                </li>
+               
 
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <button class="btn Pagebtns" type="submit">Search</button>
                 </form>
             </ul>
         </div>
+        <div class="login">
+            <ul>
+                <button class="btn btn-secondary Pagebtns" type="login">Login</button>
+            </ul>
+
+        </div>
     </div>
 </nav>
+
+
 
 
     <div class="container">
@@ -166,6 +173,7 @@
 	<br>
 	<div class="row" id="ads">
     <!-- Category Card -->
+        
     <div class="col-md-4">
         <div class="card rounded">
             <div class="card-image">
@@ -186,6 +194,7 @@
             </div>
         </div>
     </div>
+
        <div class="col-md-4">
         <div class="card rounded">
             <div class="card-image">
@@ -227,6 +236,7 @@
             </div>
         </div>
     </div>
+            
 
 </div>
 </div>

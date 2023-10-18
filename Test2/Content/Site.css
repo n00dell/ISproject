@@ -47,4 +47,7 @@ li{
 .list-unstyled{
     list-style:none;
 }
+#Cart:hover {
+    fill: green;
+}
 

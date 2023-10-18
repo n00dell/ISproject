@@ -1,40 +1,82 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="Test2.Index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <style>
-         .navbar-nav .nav-link:hover {
-            color: green;
+        .navbar-nav .nav-link:hover {
+            color: #4CAF50;
+        }
+        .Pagebtns{
+             background-color: #4CAF50;
+ color: #fff;
+ padding: 10px 20px;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ transition: background-color 0.3s, color 0.3s;
+        }
+
+        .Pagebtns:hover{
+            background-color: #fff;
+color: #4CAF50;
+        }
+        .rounded-circle{
+            border-radius:100px;
+        }
+                #Cart:hover{
+  fill:green;
+}
+
     </style>
     
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light justify-content-center">
-        <div class ="container">
-    <a class="navbar-brand" runat="server" href="#">Your Logo</a>
-    <button type ="button " class="navbar-toggler" data-bs-toggle="collapse"data-bs-target=".navbar-collapse"  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between"  id="navbarNav">
-        <ul class="navbar-nav flex-grow-1">
-            <li class="nav-item active">
-                <a class="nav-link" href="Index.aspx">Home</a>
-            </li>
-           
-            <li class="nav-item">
-             <a class="nav-link" href="Contact.aspx">Contact</a>
-             </li>
-            <li class="nav-item">
-            <a class="nav-link" href="Login.aspx">Login</a>
-           </li>
-            
-           
+    <div class="container">
+        <div class="logo"><a class="navbar-brand" runat="server" href="#">Logo</a></div>
+        
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between" id="navbarNav">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item active">
+                    <a class="nav-link" href="Index.aspx">Home <span class="sr-only"></span></a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="Contact.aspx">Contact</a>
+                </li>
 
-             <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+             
 
-            
-        </ul>
+               
+
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn Pagebtns" type="submit">Search</button>
+                </form>
+            </ul>
+        </div>
+                <a class="nav-icon position-relative text-decoration-none" href="#">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="25px" height="30px" viewBox="0 0 40 36" style="enable-background:new 0 0 40 36;" xml:space="preserve">
+<g id="Page-1_4_" sketch:type="MSPage">
+	<g id="Desktop_4_" transform="translate(-84.000000, -410.000000)" sketch:type="MSArtboardGroup">
+		<path id="Cart" sketch:type="MSShapeGroup" class="st0" d="M94.5,434.6h24.8l4.7-15.7H92.2l-1.3-8.9H84v4.8h3.1l3.7,27.8h0.1
+			c0,1.9,1.8,3.4,3.9,3.4c2.2,0,3.9-1.5,3.9-3.4h12.8c0,1.9,1.8,3.4,3.9,3.4c2.2,0,3.9-1.5,3.9-3.4h1.7v-3.9l-25.8-0.1L94.5,434.6"
+			/>
+	</g>
+</g>
+  </svg>
+                        <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
+                    </a>
+        <div class="login">
+            <ul>
+                 <form action="Login.aspx"> 
+      <button class="btn btn-secondary Pagebtns" type="login" >Login</button>
+
+  </form>
+            </ul>
+
+        </div>
     </div>
-            </div>
 </nav>
     
         <div id="demo" class="carousel slide" data-bs-ride="carousel">
@@ -42,8 +84,8 @@
   <!-- Indicators/dots -->
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    <button type="button"  data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button"  data-bs-target="#demo" data-bs-slide-to="2"></button>
   </div>
   
   <!-- The slideshow/carousel -->
@@ -83,35 +125,32 @@
 
 <div class="container-fluid mt-3">
 
-    <!-- Categroy of the month-->
+    <!-- Category of the month-->
    <section class="container py-5">
+
         <div class="row text-center pt-3">
             <div class="col-lg-6 m-auto">
-                <h1 class="h1">Categories</h1>
+                <h1 class="h1">Categories of the month</h1>
                 
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="C:\Users\thehe\source\repos\Test2\watch.jpg" class="rounded-circle img-fluid border"></a>
+                <a href="#"><img src="Image/Maasai1.jpg" class="rounded-circle img-fluid border"></a>
                 <h5 class="text-center mt-3 mb-3">Curio</h5>
-                <p class="text-center"><a class="btn btn-success" href="Curio.aspx">Go Shop</a></p>
+                <p class="text-center"><a class="btn Pagebtns" href="Curio.aspx">Go Shop</a></p>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="https://images.unsplash.com/photo-1596783047904-4000addd05cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZHJlc3Nlc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" class="rounded-circle img-fluid border"></a>
+                <a href="#"><img src="Image/T-shirt1.jpg" class="rounded-circle img-fluid border" radius="150px" ></a>
                 <h2 class="h5 text-center mt-3 mb-3">Clothes</h2>
-                <p class="text-center"><a class="btn btn-success" href="Clothes.aspx">Go Shop</a></p>
+                <p class="text-center"><a class="btn Pagebtns" href="Clothes.aspx">Go Shop</a></p>
             </div>
             <div class="col-12 col-md-4 p-5 mt-3">
-                <a href="#"><img src="https://unsplash.com/photos/2z7MxnXQs3k" class="rounded-circle img-fluid border"></a>
+                <a href="#"><img src="Image/watch2.jpeg" class="rounded-circle img-fluid border" style="width: 200px; height: 200px;"></a>
                 <h2 class="h5 text-center mt-3 mb-3">Watches and bracelets</h2>
-                <p class="text-center"><a class="btn btn-success" href="WatchesandBracelets.aspx">Go Shop</a></p>
+                <p class="text-center"><a class="btn Pagebtns" href="WatchesandBracelets.aspx">Go Shop</a></p>
             </div>
-            <div class="col-12 col-md-4 p-5 mt-3">
-                 <a href="#"><img src="https://unsplash.com/photos/2z7MxnXQs3k" class="rounded-circle img-fluid border"></a>
-                 <h2 class="h5 text-center mt-3 mb-3">Furniture</h2>
-                 <p class="text-center"><a class="btn btn-success" href="Furniture.aspx">Go Shop</a></p>
-  </div>
+           
         </div>
     </section>
 
@@ -119,27 +158,32 @@
      <!-- End of categroy of the month-->
 
     <!-- some card images-->
+         <div class="col-lg-6 m-auto">
+     <h1 class="h1">Other Categories</h1><br /><br />
+     
+         </div>
     <div class="container">
+   
 <div class="row">
 
     <div class ="col-md-4">
      <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="" alt="Card image cap">
+  <img class="card-img-top" src="Image/chair.jpeg" width="250px" height="214px" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">Furniture</h5>
+    <p class="card-text"> Upgrade your furniture.</p>
+    <a href="Furniture.aspx" class="btn Pagebtns">Shop</a>
   </div>
 </div>
  </div>
 
         <div class ="col-md-4">
      <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
+  <img class="card-img-top" src="Image/bracelets.jpeg" width="250px" height="214px" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">Bracelets</h5>
+    <p class="card-text">Culturally diverse bracelets</p>
+    <a href="WatchesandBracelets.aspx" class="btn Pagebtns">Shop </a>
   </div>
 </div>
 
@@ -147,11 +191,11 @@
 
         <div class ="col-md-4">
      <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
+  <img class="card-img-top" src="Image/watch.jpg" width="250px" height="214px" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">Watch</h5>
+    <p class="card-text">Accessorise with some watches</p>
+    <a href="WatchesandBracelets.aspx" class="btn Pagebtns">Shop</a>
   </div>
 </div>
 
@@ -258,7 +302,7 @@
     <!-- Section: Text -->
     <section class="mb-4">
       <p>
-        Tell a friend to tell a friend
+        Visit us
       </p>
     </section>
     <!-- Section: Text -->
@@ -267,86 +311,55 @@
     <section class="">
       <!--Grid row-->
       <div class="row">
+       
+
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
+          <h5 class="text-uppercase">Products</h5>
 
           <ul class="list-unstyled mb-0">
             <li>
-              <a href="#!" class="text-white">Link 1</a>
+              <a href="Clothes.aspx" class="text-white">Clothes</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Link 2</a>
+              <a href="Curio.aspx" class="text-white">Curio</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Link 3</a>
+              <a href="Furniture.aspx" class="text-white">Furniture</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Link 4</a>
+              <a href="WatchesandBracelets.aspx" class="text-white">Watches and Bracelets</a>
             </li>
+             
           </ul>
         </div>
         <!--Grid column-->
 
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
+          <h5 class="text-uppercase">Contacts</h5>
 
           <ul class="list-unstyled mb-0">
             <li>
-              <a href="#!" class="text-white">Link 1</a>
+              <a href="Contact.aspx" class="text-white">Reach us</a>
             </li>
-            <li>
-              <a href="#!" class="text-white">Link 2</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 3</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 4</a>
-            </li>
+          
           </ul>
         </div>
         <!--Grid column-->
 
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
+          <h5 class="text-uppercase">Join us</h5>
 
           <ul class="list-unstyled mb-0">
             <li>
-              <a href="#!" class="text-white">Link 1</a>
+              <a href="Login.aspx" class="text-white">Login</a>
             </li>
             <li>
-              <a href="#!" class="text-white">Link 2</a>
+              <a href="SignUp.aspx" class="text-white">Sign Up</a>
             </li>
-            <li>
-              <a href="#!" class="text-white">Link 3</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 4</a>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
-
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="#!" class="text-white">Link 1</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 2</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 3</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 4</a>
-            </li>
+            
           </ul>
         </div>
         <!--Grid column-->
