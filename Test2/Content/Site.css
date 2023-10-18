@@ -1,0 +1,50 @@
+﻿/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+.container {
+    max-width: 100%;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .body-content {
+        padding: 0;
+    }
+}
+
+.pb-3{
+    padding-bottom:1rem!important;
+}
+
+li{
+    font-family:'Roboto', sans-serif;
+    font-size:18px !important;
+    font-weight:300;
+    display: list-item;
+    text-align: -web-match-parent;
+}
+
+.list-unstyled{
+    list-style:none;
+}
+
