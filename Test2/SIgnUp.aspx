@@ -128,27 +128,34 @@ color: #4CAF50;
       <div class="signup-container">
         <h2>Sign Up</h2>
         <form>
+            <asp:HiddenField ID="hfUserID" runat="server" />
             <div class="form-group">
-                <input type="text" placeholder="First Name" />
+                <asp:TextBox ID="txtFname" runat="server" placeholder="First Name"></asp:TextBox>
+               
             </div>
             <div class="form-group">
-                <input type="text" placeholder="Last Name" />
+                <asp:TextBox ID="txtLname" runat="server" placeholder="Last Name"></asp:TextBox>
             </div>
             <div class="form-group">
-                <input type="text" placeholder="Email" />
+                <asp:TextBox ID="txtUsername" runat="server" placeholder="Username"></asp:TextBox>
+        </div>
+            <div class="form-group">
+                <asp:TextBox ID="txtEmail" runat="server" placeholder="Email"></asp:TextBox>
             </div>
             <div class="form-group">
-                <input type="password" placeholder="Create Password" />
+                 <asp:TextBox ID="txtPassword" placeholder="Create Password" TextMode="Password" runat="server"></asp:TextBox>
             </div>
             <div class="form-group">
-                <input type="password" placeholder="Retype Password" />
+              <asp:TextBox ID="txtPassword1" placeholder="Retype Password" TextMode="Password" runat="server"></asp:TextBox>
             </div>
             <div class="form-group">
-                <asp:Button ID="btnSignUp" CssClass="signup-button" Text="Sign Up" runat="server"/>
+                <asp:Button ID="btnSignUp" CssClass="signup-button" Text="Sign Up" runat="server" OnClick="btnSignUp_Click"/>
             </div>
         </form>
         <div class="login-link">
             Already have an account? <a href="Login.aspx">Login</a>
         </div>
+          <asp:Label ID="lblSuccessMessage" runat="server" Text="" ForeColor="LightGreen"></asp:Label>
+          <asp:Label ID="lblErrorMessage" runat="server" Text="" ForeColor="Red" ></asp:Label>
     </div>
 </asp:Content>

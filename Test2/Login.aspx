@@ -137,13 +137,13 @@ color: #4CAF50;
         <h2>Login</h2>
         <form>
             <div class="form-group">
-                <input type="text" placeholder="Username" />
+                <asp:TextBox ID="txtUsername" runat="server" placeholder="Username"></asp:TextBox>
             </div>
             <div class="form-group">
-                <input type="password" placeholder="Password" />
+                <asp:TextBox ID="txtPassword" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
             </div>
             <div class="form-group">
-                <asp:Button ID="btnLogin" CssClass="login-button" Text="Login" runat="server" />
+                <asp:Button ID="btnLogin" CssClass="login-button" Text="Login" runat="server" OnClick="btnLogin_Click" />
             </div>
             <div class="forgot-password">
                 <a href="#">Forgot Password?</a>
@@ -152,9 +152,46 @@ color: #4CAF50;
         <div class="signup-link">
             Don't have an account? <a href="SignUp.aspx">Sign Up</a>
         </div>
+           <asp:Label ID="lblErrorMessage" runat="server" Text="Make sure the email and passwords are correct"></asp:Label>
     </div>
   
+    <script>
+        document.getElementById('btnSubmit').addEventListener('click', function () {
+    var password = document.getElementById('txtPassword').value;
 
+    // Create a new XMLHttpRequest (AJAX) object
+    var xhr = new XMLHttpRequest();
+
+    // Specify the type of request and the URL to send the request to
+    xhr.open('POST', 'Login.aspx', true);
+
+    // Set the request header (if needed)
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    // Define the function to handle the response from the server
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Handle the response from the server here
+            var response = xhr.responseText;
+            // You can check the response for success or failure
+            if (response === 'success') {
+                // Redirect to the dashboard or another page
+                window.location.href = 'Index.aspx';
+            } else {
+                // Display an error message
+                alert('Login failed. Please try again.');
+            }
+        }
+    };
+
+    // Construct the data to send (password in this case)
+    var data = 'password=' + encodeURIComponent(password);
+
+    // Send the request
+    xhr.send(data);
+});
+
+    </script>
     
     
 </asp:Content>
