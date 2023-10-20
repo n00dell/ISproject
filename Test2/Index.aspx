@@ -44,8 +44,18 @@ color: #4CAF50;
                     <a class="nav-link" href="Contact.aspx">Contact</a>
                 </li>
 
-             
-
+              <li class="nav-item">
+     <a class="nav-link" href="Furniture.aspx">Furniture</a>
+ </li>
+                 <li class="nav-item">
+     <a class="nav-link" href="Curio.aspx">Curio</a>
+ </li>
+                 <li class="nav-item">
+     <a class="nav-link" href="Clothes.aspx">Clothes</a>
+ </li>
+                 <li class="nav-item">
+     <a class="nav-link" href="WatchesandBracelets.aspx">Accessories</a>
+ </li>
                
 
                 <form class="d-flex">

@@ -24,6 +24,9 @@
             background-color: #fff;
 color: #4CAF50;
         }
+        .navbar-nav .nav-link:hover {
+            color: #4CAF50;
+        }
 
 /* Category Ads */
 
@@ -121,9 +124,6 @@ color: #4CAF50;
         font-size: 18px;
     }
 
- .navbar-nav .nav-link:hover {
-            color: green;
-        }
 
  img{
      height:150px;
@@ -141,7 +141,7 @@ color: #4CAF50;
     </style>
 
     
-   <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light justify-content-center">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light justify-content-center">
     <div class="container">
         <div class="logo"><a class="navbar-brand" runat="server" href="#">Logo</a></div>
         
@@ -158,8 +158,18 @@ color: #4CAF50;
                     <a class="nav-link" href="Contact.aspx">Contact</a>
                 </li>
 
-             
-
+              <li class="nav-item">
+     <a class="nav-link" href="Furniture.aspx">Furniture</a>
+ </li>
+                 <li class="nav-item">
+     <a class="nav-link" href="Curio.aspx">Curio</a>
+ </li>
+                 <li class="nav-item">
+     <a class="nav-link" href="Clothes.aspx">Clothes</a>
+ </li>
+                 <li class="nav-item">
+     <a class="nav-link" href="WatchesandBracelets.aspx">Accessories</a>
+ </li>
                
 
                 <form class="d-flex">
@@ -216,7 +226,7 @@ color: #4CAF50;
                 <div class="ad-title m-auto">
                     <h5>Wooden Chair</h5>
                 </div>
-                <a class="ad-btn" href="#">View</a>
+                <a class="ad-btn" href="Description.aspx">View</a>
             </div>
         </div>
     </div>
@@ -236,7 +246,7 @@ color: #4CAF50;
                 <div class="ad-title m-auto">
                     <h5>Wooden Chair</h5>
                 </div>
-                <a class="ad-btn" href="#">View</a>
+                <a class="ad-btn" href="Description.aspx">View</a>
             </div>
         </div>
     </div>
@@ -257,7 +267,7 @@ color: #4CAF50;
                 <div class="ad-title m-auto">
                     <h5>Wooden Chair</h5>
                 </div>
-                <a class="ad-btn" href="#">View</a>
+                <a class="ad-btn" href="Description.aspx">View</a>
             </div>
         </div>
     </div>

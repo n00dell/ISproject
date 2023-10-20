@@ -73,7 +73,8 @@ color: #4CAF50;
 
     </style>
 
-       <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light justify-content-center">
+    
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light justify-content-center">
     <div class="container">
         <div class="logo"><a class="navbar-brand" runat="server" href="#">Logo</a></div>
         
@@ -90,8 +91,18 @@ color: #4CAF50;
                     <a class="nav-link" href="Contact.aspx">Contact</a>
                 </li>
 
-             
-
+              <li class="nav-item">
+     <a class="nav-link" href="Furniture.aspx">Furniture</a>
+ </li>
+                 <li class="nav-item">
+     <a class="nav-link" href="Curio.aspx">Curio</a>
+ </li>
+                 <li class="nav-item">
+     <a class="nav-link" href="Clothes.aspx">Clothes</a>
+ </li>
+                 <li class="nav-item">
+     <a class="nav-link" href="WatchesandBracelets.aspx">Accessories</a>
+ </li>
                
 
                 <form class="d-flex">
@@ -100,7 +111,7 @@ color: #4CAF50;
                 </form>
             </ul>
         </div>
-        <a class="nav-icon position-relative text-decoration-none" href="#">
+                <a class="nav-icon position-relative text-decoration-none" href="#">
                       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="25px" height="30px" viewBox="0 0 40 36" style="enable-background:new 0 0 40 36;" xml:space="preserve">
 <g id="Page-1_4_" sketch:type="MSPage">
@@ -115,7 +126,7 @@ color: #4CAF50;
                     </a>
         <div class="login">
             <ul>
-                <form action="Login.aspx"> 
+                 <form action="Login.aspx"> 
       <button class="btn btn-secondary Pagebtns" type="login" >Login</button>
 
   </form>

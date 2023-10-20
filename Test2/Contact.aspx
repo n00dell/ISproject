@@ -327,8 +327,18 @@ color: #4CAF50;
                     <a class="nav-link" href="Contact.aspx">Contact</a>
                 </li>
 
-             
-
+              <li class="nav-item">
+     <a class="nav-link" href="Furniture.aspx">Furniture</a>
+ </li>
+                 <li class="nav-item">
+     <a class="nav-link" href="Curio.aspx">Curio</a>
+ </li>
+                 <li class="nav-item">
+     <a class="nav-link" href="Clothes.aspx">Clothes</a>
+ </li>
+                 <li class="nav-item">
+     <a class="nav-link" href="WatchesandBracelets.aspx">Accessories</a>
+ </li>
                
 
                 <form class="d-flex">
@@ -352,7 +362,7 @@ color: #4CAF50;
                     </a>
         <div class="login">
             <ul>
-                <form action="Login.aspx"> 
+                 <form action="Login.aspx"> 
       <button class="btn btn-secondary Pagebtns" type="login" >Login</button>
 
   </form>

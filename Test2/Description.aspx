@@ -42,8 +42,18 @@ color: #4CAF50;
                     <a class="nav-link" href="Contact.aspx">Contact</a>
                 </li>
 
-             
-
+              <li class="nav-item">
+     <a class="nav-link" href="Furniture.aspx">Furniture</a>
+ </li>
+                 <li class="nav-item">
+     <a class="nav-link" href="Curio.aspx">Curio</a>
+ </li>
+                 <li class="nav-item">
+     <a class="nav-link" href="Clothes.aspx">Clothes</a>
+ </li>
+                 <li class="nav-item">
+     <a class="nav-link" href="WatchesandBracelets.aspx">Accessories</a>
+ </li>
                
 
                 <form class="d-flex">
@@ -250,10 +260,10 @@ color: #4CAF50;
                                             <li class="list-inline-item">Size :
                                                 <input type="hidden" name="product-size" id="product-size" value="S">
                                             </li>
-                                            <li class="list-inline-item"><span class="btn btn-success btn-size">S</span></li>
-                                            <li class="list-inline-item"><span class="btn btn-success btn-size">M</span></li>
-                                            <li class="list-inline-item"><span class="btn btn-success btn-size">L</span></li>
-                                            <li class="list-inline-item"><span class="btn btn-success btn-size">XL</span></li>
+                                            <li class="list-inline-item"><span class="btn Pagebtns btn-size">S</span></li>
+                                            <li class="list-inline-item"><span class="btn Pagebtns btn-size">M</span></li>
+                                            <li class="list-inline-item"><span class="btn Pagebtns btn-size">L</span></li>
+                                            <li class="list-inline-item"><span class="btn Pagebtns btn-size">XL</span></li>
                                         </ul>
                                     </div>
                                     <div class="col-auto">
@@ -262,18 +272,18 @@ color: #4CAF50;
                                                 Quantity
                                                 <input type="hidden" name="product-quanity" id="product-quanity" value="1">
                                             </li>
-                                            <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
+                                            <li class="list-inline-item"><span class="btn Pagebtns" id="btn-minus">-</span></li>
                                             <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
-                                            <li class="list-inline-item"><span class="btn btn-success" id="btn-plus">+</span></li>
+                                            <li class="list-inline-item"><span class="btn Pagebtns" id="btn-plus">+</span></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="row pb-3">
                                     <div class="col d-grid">
-                                        <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Buy</button>
+                                        <button type="submit" class="btn Pagebtns btn-lg" name="submit" value="buy">Buy</button>
                                     </div>
                                     <div class="col d-grid">
-                                        <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Add To Cart</button>
+                                        <button type="submit" class="btn Pagebtns btn-lg" name="submit" value="addtocard">Add To Cart</button>
                                     </div>
                                 </div>
                             </form>
@@ -286,205 +296,7 @@ color: #4CAF50;
     </section>
     <!-- Close Content -->
 
-    <!-- Start Article -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row text-left p-2 pb-3">
-                <h4>Related Products</h4>
-            </div>
-
-            <!--Start Carousel Wrapper-->
-            <div id="carousel-related-product">
-
-                <div class="p-2 pb-3">
-                    <div class="product-wap card rounded-0">
-                        <div class="card rounded-0">
-                            <img class="card-img rounded-0 img-fluid" src="Image/chair.jpeg">
-                            <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white" href="Description.aspx"><i class="far fa-heart"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="Description.aspx"><i class="far fa-eye"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="Description.aspx"><i class="fas fa-cart-plus"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <a href="Description.aspx" class="h3 text-decoration-none">Red Clothing</a>
-                            <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                                <li>M/L/X/XL</li>
-                                <li class="pt-2">
-                                    <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
-                                    <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
-                                    <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
-                                    <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
-                                    <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
-                                </li>
-                            </ul>
-                            <ul class="list-unstyled d-flex justify-content-center mb-1">
-                                <li>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                </li>
-                            </ul>
-                            <p class="text-center mb-0">$20.00</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-2 pb-3">
-     <div class="product-wap card rounded-0">
-         <div class="card rounded-0">
-             <img class="card-img rounded-0 img-fluid" src="Image/chair.jpeg">
-             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                 <ul class="list-unstyled">
-                     <li><a class="btn btn-success text-white" href="Description.aspx"><i class="far fa-heart"></i></a></li>
-                     <li><a class="btn btn-success text-white mt-2" href="Description.aspx"><i class="far fa-eye"></i></a></li>
-                     <li><a class="btn btn-success text-white mt-2" href="Description.aspx"><i class="fas fa-cart-plus"></i></a></li>
-                 </ul>
-             </div>
-         </div>
-         <div class="card-body">
-             <a href="Description.aspx" class="h3 text-decoration-none">Red Clothing</a>
-             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                 <li>M/L/X/XL</li>
-                 <li class="pt-2">
-                     <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
-                     <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
-                     <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
-                     <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
-                     <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
-                 </li>
-             </ul>
-             <ul class="list-unstyled d-flex justify-content-center mb-1">
-                 <li>
-                     <i class="text-warning fa fa-star"></i>
-                     <i class="text-warning fa fa-star"></i>
-                     <i class="text-warning fa fa-star"></i>
-                     <i class="text-warning fa fa-star"></i>
-                     <i class="text-muted fa fa-star"></i>
-                 </li>
-             </ul>
-             <p class="text-center mb-0">$20.00</p>
-         </div>
-     </div>
- </div>
- <div class="p-2 pb-3">
-     <div class="product-wap card rounded-0">
-         <div class="card rounded-0">
-             <img class="card-img rounded-0 img-fluid" src="Image/chair.jpeg">
-             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                 <ul class="list-unstyled">
-                     <li><a class="btn btn-success text-white" href="Description.aspx"><i class="far fa-heart"></i></a></li>
-                     <li><a class="btn btn-success text-white mt-2" href="Description.aspx"><i class="far fa-eye"></i></a></li>
-                     <li><a class="btn btn-success text-white mt-2" href="Description.aspx"><i class="fas fa-cart-plus"></i></a></li>
-                 </ul>
-             </div>
-         </div>
-         <div class="card-body">
-             <a href="Description.aspx" class="h3 text-decoration-none">Red Clothing</a>
-             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                 <li>M/L/X/XL</li>
-                 <li class="pt-2">
-                     <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
-                     <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
-                     <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
-                     <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
-                     <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
-                 </li>
-             </ul>
-             <ul class="list-unstyled d-flex justify-content-center mb-1">
-                 <li>
-                     <i class="text-warning fa fa-star"></i>
-                     <i class="text-warning fa fa-star"></i>
-                     <i class="text-warning fa fa-star"></i>
-                     <i class="text-warning fa fa-star"></i>
-                     <i class="text-muted fa fa-star"></i>
-                 </li>
-             </ul>
-             <p class="text-center mb-0">$20.00</p>
-         </div>
-     </div>
- </div>
- <div class="p-2 pb-3">
-     <div class="product-wap card rounded-0">
-         <div class="card rounded-0">
-             <img class="card-img rounded-0 img-fluid" src="Image/chair.jpeg">
-             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                 <ul class="list-unstyled">
-                     <li><a class="btn btn-success text-white" href="Description.aspx"><i class="far fa-heart"></i></a></li>
-                     <li><a class="btn btn-success text-white mt-2" href="Description.aspx"><i class="far fa-eye"></i></a></li>
-                     <li><a class="btn btn-success text-white mt-2" href="Description.aspx"><i class="fas fa-cart-plus"></i></a></li>
-                 </ul>
-             </div>
-         </div>
-         <div class="card-body">
-             <a href="Description.aspx" class="h3 text-decoration-none">Red Clothing</a>
-             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                 <li>M/L/X/XL</li>
-                 <li class="pt-2">
-                     <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
-                     <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
-                     <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
-                     <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
-                     <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
-                 </li>
-             </ul>
-             <ul class="list-unstyled d-flex justify-content-center mb-1">
-                 <li>
-                     <i class="text-warning fa fa-star"></i>
-                     <i class="text-warning fa fa-star"></i>
-                     <i class="text-warning fa fa-star"></i>
-                     <i class="text-warning fa fa-star"></i>
-                     <i class="text-muted fa fa-star"></i>
-                 </li>
-             </ul>
-             <p class="text-center mb-0">$20.00</p>
-         </div>
-     </div>
- </div>
-
-            <div class="p-2 pb-3">
-     <div class="product-wap card rounded-0">
-         <div class="card rounded-0">
-             <img class="card-img rounded-0 img-fluid" src="Image/chair.jpeg">
-             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                 <ul class="list-unstyled">
-                     <li><a class="btn btn-success text-white" href="Description.aspx"><i class="far fa-heart"></i></a></li>
-                     <li><a class="btn btn-success text-white mt-2" href="Description.aspx"><i class="far fa-eye"></i></a></li>
-                     <li><a class="btn btn-success text-white mt-2" href="Description.aspx"><i class="fas fa-cart-plus"></i></a></li>
-                 </ul>
-             </div>
-         </div>
-         <div class="card-body">
-             <a href="Description.aspx" class="h3 text-decoration-none">Couch</a>
-             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-                 <li>M/L/X/XL</li>
-                 <li class="pt-2">
-                     <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
-                     <span class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
-                     <span class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
-                     <span class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
-                     <span class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
-                 </li>
-             </ul>
-             <ul class="list-unstyled d-flex justify-content-center mb-1">
-                 <li>
-                     <i class="text-warning fa fa-star"></i>
-                     <i class="text-warning fa fa-star"></i>
-                     <i class="text-warning fa fa-star"></i>
-                     <i class="text-warning fa fa-star"></i>
-                     <i class="text-muted fa fa-star"></i>
-                 </li>
-             </ul>
-             <p class="text-center mb-0">Ksh 20000</p>
-         </div>
-     </div>
- </div>
-
-            </div>
+    
 
 
         </div>
