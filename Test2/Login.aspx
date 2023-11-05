@@ -146,7 +146,7 @@ color: #4CAF50;
 
        <div class="login-container">
         <h2>Login</h2>
-        <form>
+        <form method="post">
             <div class="form-group">
                 <asp:TextBox ID="txtUsername" runat="server" placeholder="Username"></asp:TextBox>
             </div>

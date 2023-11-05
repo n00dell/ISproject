@@ -1,6 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SIgnUp.aspx.cs" Inherits="Test2.SIgnUp" %>
+﻿<%@ Page Title=""  Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SIgnUp.aspx.cs" Inherits="Test2.SIgnUp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
 
+    <title>SignUp</title>
     <style>
           .navbar-nav .nav-link:hover {
             color: #4CAF50;
@@ -73,6 +78,11 @@ color: #4CAF50;
 
     </style>
 
+
+    
+    </head>
+
+    <body>
     
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light justify-content-center">
     <div class="container">
@@ -138,35 +148,50 @@ color: #4CAF50;
 
       <div class="signup-container">
         <h2>Sign Up</h2>
-        <form>
-            <asp:HiddenField ID="hfUserID" runat="server" />
-            <div class="form-group">
-                <asp:TextBox ID="txtFname" runat="server" placeholder="First Name"></asp:TextBox>
-               
-            </div>
-            <div class="form-group">
-                <asp:TextBox ID="txtLname" runat="server" placeholder="Last Name"></asp:TextBox>
-            </div>
-            <div class="form-group">
-                <asp:TextBox ID="txtUsername" runat="server" placeholder="Username"></asp:TextBox>
-        </div>
-            <div class="form-group">
-                <asp:TextBox ID="txtEmail" runat="server" placeholder="Email"></asp:TextBox>
-            </div>
-            <div class="form-group">
-                 <asp:TextBox ID="txtPassword" placeholder="Create Password" TextMode="Password" runat="server"></asp:TextBox>
-            </div>
-            <div class="form-group">
-              <asp:TextBox ID="txtPassword1" placeholder="Retype Password" TextMode="Password" runat="server"></asp:TextBox>
-            </div>
-            <div class="form-group">
-                <asp:Button ID="btnSignUp" CssClass="signup-button" Text="Sign Up" runat="server" OnClick="btnSignUp_Click"/>
-            </div>
-        </form>
+<form id="signupForm" method="post" action="SIgnUp.aspx" onsubmit="return validateForm();">
+    <asp:HiddenField ID="hfUserID" runat="server" />
+    <div class="form-group">
+        <asp:TextBox ID="txtFname" runat="server" placeholder="First Name"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvFname" runat="server" ControlToValidate="txtFname" Display="Dynamic" ForeColor="Red" InitialValue="" ErrorMessage="First Name is required." CssClass="d-none" />
+    </div>
+    <div class="form-group">
+        <asp:TextBox ID="txtLname" runat="server" placeholder="Last Name"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvLname" runat="server" ControlToValidate="txtLname" Display="Dynamic" ForeColor="Red" InitialValue="" ErrorMessage="Last Name is required." CssClass="d-none" />
+    </div>
+    <div class="form-group">s
+        <asp:TextBox ID="txtUsername" runat="server" placeholder="Username"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvUsername" runat="server" ControlToValidate="txtUsername" Display="Dynamic" ForeColor="Red" InitialValue="" ErrorMessage="Username is required." CssClass="d-none" />
+    </div>
+    <div class="form-group">
+        <asp:TextBox ID="txtEmail" runat="server" placeholder="Email"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" Display="Dynamic" ForeColor="Red" InitialValue="" ErrorMessage="Email is required." CssClass="d-none" />
+    </div>
+    <div class="form-group">
+        <asp:TextBox ID="txtPassword" placeholder="Create Password" TextMode="Password" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword" Display="Dynamic" ForeColor="Red" InitialValue="" ErrorMessage="Password is required." CssClass="d-none" />
+    </div>
+    <div class="form-group">
+        <asp:TextBox ID="txtPassword1" placeholder="Retype Password" TextMode="Password" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="rfvPassword1" runat="server" ControlToValidate="txtPassword1" Display="Dynamic" ForeColor="Red" InitialValue="" ErrorMessage="Please retype the password." CssClass="d-none" />
+    </div>
+    <div class="form-group">
+        <asp:Button ID="btnSignUp" CssClass="signup-button" Text="Sign Up" runat="server" OnClick="btnSignUp_Click" OnClientClick="return validateForm()" />
+    </div>
+</form>
+
+
+
+
+
         <div class="login-link">
             Already have an account? <a href="Login.aspx">Login</a>
         </div>
           <asp:Label ID="lblSuccessMessage" runat="server" Text="" ForeColor="LightGreen"></asp:Label>
           <asp:Label ID="lblErrorMessage" runat="server" Text="" ForeColor="Red" ></asp:Label>
     </div>
+        </body>
+ 
+    </html>
+
+      
 </asp:Content>

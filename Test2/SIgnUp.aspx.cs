@@ -18,11 +18,17 @@ namespace Test2
         protected void btnSignUp_Click(object sender, EventArgs e)
         {
             string username1 = txtUsername.Text;
-            string ConfirmPass = txtPassword1.Text;
+            string confirmPass = txtPassword1.Text;
             string password1 = txtPassword.Text;
             string FirstName1 = txtFname.Text;
             string LastName1 = txtLname.Text;
             string email1 = txtEmail.Text;
+
+            if (string.IsNullOrWhiteSpace(FirstName1) || string.IsNullOrWhiteSpace(LastName1) || string.IsNullOrWhiteSpace(username1) || string.IsNullOrWhiteSpace(email1) || string.IsNullOrWhiteSpace(password1) || string.IsNullOrWhiteSpace(confirmPass))
+            {
+                lblErrorMessage.Text = "Please fill in all required fields.";
+                return;
+            }
 
 
             // Construct the connection string
@@ -33,7 +39,7 @@ namespace Test2
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
-                string query = "INSERT INTO UserRegistration (FirstName, LastName, Username, Email, Password) VALUES(@FirstName, @LastName, @Username, @Email, @pPassword)";
+                string query = "INSERT INTO UserRegistration.dbo (FirstName, LastName, Username, Email, Password) VALUES(@FirstName, @LastName, @Username, @Email, @pPassword)";
 
                 using (SqlCommand cmd = new SqlCommand(query))
                         {
