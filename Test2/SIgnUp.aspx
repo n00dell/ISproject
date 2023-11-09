@@ -6,78 +6,7 @@
 <head>
 
     <title>SignUp</title>
-    <style>
-          .navbar-nav .nav-link:hover {
-            color: #4CAF50;
-        }
-        .Pagebtns{
-             background-color: #4CAF50;
- color: #fff;
- padding: 10px 20px;
- border: none;
- border-radius: 5px;
- cursor: pointer;
- transition: background-color 0.3s, color 0.3s;
-        }
-
-        .Pagebtns:hover{
-            background-color: #fff;
-color: #4CAF50;
-        }
-       body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        .signup-container {
-            text-align: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .form-group {
-            margin: 10px 0;
-        }
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .signup-button, .login-btn {
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .signup-button:hover, .login-btn:hover {
-            background-color: #fff;
-            color: #4CAF50;
-        }
-        .login-link {
-            text-align: center;
-            margin-top: 10px;
-        }
-        
-        #Cart:hover{
-  fill:green;
-}
-
-    </style>
-
+   
 
     
     </head>
@@ -158,7 +87,7 @@ color: #4CAF50;
         <asp:TextBox ID="txtLname" runat="server" placeholder="Last Name"></asp:TextBox>
         <asp:RequiredFieldValidator ID="rfvLname" runat="server" ControlToValidate="txtLname" Display="Dynamic" ForeColor="Red" InitialValue="" ErrorMessage="Last Name is required." CssClass="d-none" />
     </div>
-    <div class="form-group">s
+    <div class="form-group">
         <asp:TextBox ID="txtUsername" runat="server" placeholder="Username"></asp:TextBox>
         <asp:RequiredFieldValidator ID="rfvUsername" runat="server" ControlToValidate="txtUsername" Display="Dynamic" ForeColor="Red" InitialValue="" ErrorMessage="Username is required." CssClass="d-none" />
     </div>

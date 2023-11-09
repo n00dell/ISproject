@@ -6,74 +6,80 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using Test2.Models;
+using Microsoft.Ajax.Utilities;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Test2
 {
     public partial class SIgnUp : System.Web.UI.Page
     {
+       
+        private SqlConnection connection;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
         protected void btnSignUp_Click(object sender, EventArgs e)
         {
-            string username1 = txtUsername.Text;
-            string confirmPass = txtPassword1.Text;
-            string password1 = txtPassword.Text;
-            string FirstName1 = txtFname.Text;
-            string LastName1 = txtLname.Text;
-            string email1 = txtEmail.Text;
-
-            if (string.IsNullOrWhiteSpace(FirstName1) || string.IsNullOrWhiteSpace(LastName1) || string.IsNullOrWhiteSpace(username1) || string.IsNullOrWhiteSpace(email1) || string.IsNullOrWhiteSpace(password1) || string.IsNullOrWhiteSpace(confirmPass))
-            {
-                lblErrorMessage.Text = "Please fill in all required fields.";
-                return;
-            }
-
-
-            // Construct the connection string
-            string connectionString = "Data Source=DESKTOP-K6BULSV\\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
-
-            // Create a new SqlConnection object
-            
-            SqlConnection connection = new SqlConnection(connectionString);
             try
             {
-                string query = "INSERT INTO UserRegistration.dbo (FirstName, LastName, Username, Email, Password) VALUES(@FirstName, @LastName, @Username, @Email, @pPassword)";
+                string username = txtUsername.Text;
+                string email = txtEmail.Text;
+                string password = txtPassword.Text;
+                string Fname = txtFname.Text;
+                string Lname = txtLname.Text;
+                string password1 = txtPassword1.Text;
 
-                using (SqlCommand cmd = new SqlCommand(query))
-                        {
-                    cmd.Parameters.AddWithValue("@FirstName", FirstName1);
-                    cmd.Parameters.AddWithValue("@LastName", LastName1);
-                    cmd.Parameters.AddWithValue("@Username", username1);
-                    cmd.Parameters.AddWithValue("@Email", email1);
-                    cmd.Parameters.AddWithValue("@Password", password1);
+                string connectionString = "name = Model1";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
                     connection.Open();
-                    int rowAffected = cmd.ExecuteNonQuery();
-                    if (rowAffected > 0)
-                    {
-                        Response.Redirect("Index.aspx");
-                    }
-                    else
-                    {
-                        lblErrorMessage.Text = "Invalid username or password";
-                    }
+                }
+                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(Fname) || string.IsNullOrEmpty(Lname) || string.IsNullOrEmpty(password1))
+                {
+                    lblErrorMessage.Text = "Please enter the required fields";
+                    return;
+                }
+                string checkUsernameSQL = "SELECT COUNT(*) FROM Test2User WHERE Username = @Username";
+                SqlCommand checkUsernameCommand = new SqlCommand(checkUsernameSQL, connection);
+                checkUsernameCommand.Parameters.AddWithValue("@Username", username);
+
+                string checkEmailSQL = "SELECT COUNT(*) FROM Test2User WHERE Email = @Email";
+                SqlCommand checkEmailCommand = new SqlCommand(checkEmailSQL, connection);
+                checkEmailCommand.Parameters.AddWithValue("@Email", email);
+                int usernameCount = (int)checkUsernameCommand.ExecuteScalar();
+                int emailCount = (int)checkEmailCommand.ExecuteScalar();
+
+                if (usernameCount > 0)
+                {
+                    lblErrorMessage.Text = "Username already exists.";
+                    return;
                 }
 
+                if (emailCount > 0)
+                {
+                    lblErrorMessage.Text = "Email address already exists.";
+                    return;
+                }
+                string insertUserSQL = "INSERT INTO Test2User (FirstName,LastName, Email, Username, Password) VALUES (@FirstName, @LastName, @Email @Username, @Password)";
+                SqlCommand insertUserCommand = new SqlCommand(insertUserSQL, connection);
+                insertUserCommand.Parameters.AddWithValue("@Firstname", Fname); 
+                insertUserCommand.Parameters.AddWithValue("Lastname", Lname);
+                insertUserCommand.Parameters.AddWithValue("@Email", email);
+                insertUserCommand.Parameters.AddWithValue("@Username", username);
+                insertUserCommand.Parameters.AddWithValue("@Password", password);
+                
+                lblSuccessMessage.Text = "Successful sign up";
             }
-            catch (Exception ex){
-                lblErrorMessage.Text = "An error has occured" + ex.Message;
+            catch (Exception ex)
+            {
+                lblErrorMessage.Text = "An Error occured";
             }
-       
-        }
-    
 
-    // Secure password hashing function (replace with your actual implementation)
-    private string HashPassword(string password)
-    {
-        // Implement your password hashing logic here (e.g., using a secure hashing library)
-        // Return the hashed password
-        return password; // Insecure placeholder; replace with secure hashing
+        }
+
+
     }
 }
-}
+

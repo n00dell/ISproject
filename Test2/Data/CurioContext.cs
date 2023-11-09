@@ -12,7 +12,7 @@ namespace Test2.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-K6BULSV\\SQLEXPRESS;Initial Catalog=CurioDB;Integrated Security=True");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-K6BULSV;Initial Catalog=CurioDB;Integrated Security=True");
         }
     }
 }

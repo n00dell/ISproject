@@ -1,17 +1,24 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-
 namespace Test2.Models
 {
-    public class OrderDetail
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    [Table("OrderDetail")]
+    public partial class OrderDetail
     {
         public int Id { get; set; }
+
         public int Qantity { get; set; }
+
         public int OrderId { get; set; }
-        public int ProductId { get; set; } = 0;
 
-        public Order Order { get; set; }
+        public int ProductId { get; set; }
 
-        public Product Product { get; set; }
+        public virtual Order Order { get; set; }
+
+        public virtual Product Product { get; set; }
     }
 }

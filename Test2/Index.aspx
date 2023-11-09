@@ -1,29 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="Test2.Index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <style>
-        .navbar-nav .nav-link:hover {
-            color: #4CAF50;
-        }
-        .Pagebtns{
-             background-color: #4CAF50;
- color: #fff;
- padding: 10px 20px;
- border: none;
- border-radius: 5px;
- cursor: pointer;
- transition: background-color 0.3s, color 0.3s;
-        }
 
-        .Pagebtns:hover{
-            background-color: #fff;
-color: #4CAF50;
-        }
         .rounded-circle{
             border-radius:100px;
         }
-                #Cart:hover{
-  fill:green;
-}
+
 
     </style>
     

@@ -1,22 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-
 namespace Test2.Models
 {
-    public class Order
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    public partial class Order
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Order()
+        {
+            OrderDetails = new HashSet<OrderDetail>();
+        }
+
         public int Id { get; set; }
 
-        public int CustomerId { get; set; } = 0;
-        public Customer Customer { get; set; }
+        public int CustomerId { get; set; }
 
-        public DateTime OrderPlaced {  get; set; }
+        [Column(TypeName = "datetime2")]
+        public DateTime OrderPlaced { get; set; }
+
+        [Column(TypeName = "datetime2")]
         public DateTime OrderFulfilled { get; set; }
-        //public int OrderStatus { get; set; }
-        public ICollection<OrderDetail> OrderDetails { get; set; }
+
+        public virtual Customer Customer { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }
