@@ -24,12 +24,12 @@
     <br /><br /><br />
 
     <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
-    <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox><!--Password-->
+    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox><!--Password-->
     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtPassword" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
     <br /><br /><br />
 
     <asp:Label ID="lblConfirmPassword" runat="server" Text="ConfirmPassword"></asp:Label>
-    <asp:TextBox ID="txtConfirmPassword" runat="server"></asp:TextBox> <!--confirm password-->
+    <asp:TextBox ID="txtConfirmPassword"  runat="server" TextMode="Password"></asp:TextBox> <!--confirm password-->
     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtConfirmPassword" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
     <br /><br /><br />
 

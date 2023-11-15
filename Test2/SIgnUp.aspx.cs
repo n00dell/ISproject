@@ -11,6 +11,7 @@ using Microsoft.Ajax.Utilities;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Windows.Forms;
+using BCrypt.Net;
 
 namespace Test2
 {
