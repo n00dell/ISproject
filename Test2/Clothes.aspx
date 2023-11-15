@@ -3,14 +3,9 @@
     <!--Css for the cards-->
 
     
-	
-
-    
-
-    
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light justify-content-center">
     <div class="container">
-        <div class="logo"><a class="navbar-brand" runat="server" href="#">Logo</a></div>
+        <div class="logo"><a class="navbar-brand" runat="server" href="Index.aspx">Logo</a></div>
         
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
