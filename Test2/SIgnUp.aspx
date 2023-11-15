@@ -44,10 +44,10 @@
  </li>
                
 
-                <form class="d-flex">
+               <%-- <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn Pagebtns" type="submit">Search</button>
-                </form>
+                </form>--%>
             </ul>
         </div>
                 <a class="nav-icon position-relative text-decoration-none" href="#">
@@ -63,7 +63,7 @@
   </svg>
                         <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
                     </a>
-        <div class="login">
+       <%-- <div class="login">
             <ul>
                  <form action="Login.aspx"> 
       <button class="btn btn-secondary Pagebtns" type="login" >Login</button>
@@ -71,13 +71,13 @@
   </form>
             </ul>
 
-        </div>
+        </div>--%>
     </div>
 </nav>
 
       <div class="signup-container">
         <h2>Sign Up</h2>
-<form id="signupForm" method="post" action="SIgnUp.aspx" onsubmit="return validateForm();">
+<%--<form id="signupForm" runat="server">--%>
     <asp:HiddenField ID="hfUserID" runat="server" />
     <div class="form-group">
         <asp:TextBox ID="txtFname" runat="server" placeholder="First Name"></asp:TextBox>
@@ -104,9 +104,9 @@
         <asp:RequiredFieldValidator ID="rfvPassword1" runat="server" ControlToValidate="txtPassword1" Display="Dynamic" ForeColor="Red" InitialValue="" ErrorMessage="Please retype the password." CssClass="d-none" />
     </div>
     <div class="form-group">
-        <asp:Button ID="btnSignUp" CssClass="signup-button" Text="Sign Up" runat="server" OnClick="btnSignUp_Click" OnClientClick="return validateForm()" />
+        <asp:Button ID="btnSignUp" CssClass="signup-button" Text="Sign Up" runat="server"  OnClick="btnSignUp_Click" />
     </div>
-</form>
+<%--</form>--%>
 
 
 
