@@ -6,35 +6,29 @@ namespace Test2.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
+    [Table("Product")]
     public partial class Product
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
-        {
-            OrderDetails = new HashSet<OrderDetail>();
-            Products1 = new HashSet<Product>();
-        }
+        [Key]
+        public int Product_Id { get; set; }
 
-        public int ProductId { get; set; }
+        [StringLength(50)]
+        public string Product_Name { get; set; }
 
-        [Required]
-        public string Name { get; set; }
+        public int Category_Id { get; set; }
 
-        public string Description { get; set; }
+        [StringLength(50)]
+        public string Product_Description { get; set; }
 
-        [Required]
-        public string Category { get; set; }
+        public int Product_Price { get; set; }
 
-        public decimal price { get; set; }
+        [Column(TypeName = "image")]
+        public byte[] Image1 { get; set; }
 
-        public int ProductId1 { get; set; }
+        [Column(TypeName = "image")]
+        public byte[] Image2 { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products1 { get; set; }
-
-        public virtual Product Product1 { get; set; }
+        [Column(TypeName = "image")]
+        public byte[] Image3 { get; set; }
     }
 }

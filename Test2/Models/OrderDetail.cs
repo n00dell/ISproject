@@ -6,19 +6,17 @@ namespace Test2.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("OrderDetail")]
     public partial class OrderDetail
     {
-        public int Id { get; set; }
+        [Key]
+        public int Order_Details_Id { get; set; }
 
-        public int Qantity { get; set; }
+        public int Order_Id { get; set; }
 
-        public int OrderId { get; set; }
+        public int Product_Id { get; set; }
 
-        public int ProductId { get; set; }
+        public int Product_Quantity { get; set; }
 
-        public virtual Order Order { get; set; }
-
-        public virtual Product Product { get; set; }
+        public int? Subtotal { get; set; }
     }
 }

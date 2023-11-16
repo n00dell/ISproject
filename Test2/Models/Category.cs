@@ -6,16 +6,14 @@ namespace Test2.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Order")]
-    public partial class Order
+    [Table("Category")]
+    public partial class Category
     {
         [Key]
-        public int Order_Id { get; set; }
+        public int Category_Id { get; set; }
 
-        public int Order_No { get; set; }
-
-        public int? Customer_Id { get; set; }
-
-        public int? Order_Total { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string Category_Name { get; set; }
     }
 }

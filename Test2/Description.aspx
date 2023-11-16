@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-lg-5 mt-5">
                     <div class="card mb-3">
-                        <img class="card-img img-fluid" src="Image/Maasai1.jpg" alt="Card image cap" id="product-detail">
+                        <img class="card-img img-fluid" src="" alt="Card image cap" id="product-detail">
                     </div>
                     <div class="row">
                         <!--Start Controls-->
@@ -188,18 +188,19 @@
                                                 Quantity
                                                 <input type="hidden" name="product-quanity" id="product-quanity" value="1">
                                             </li>
-                                            <li class="list-inline-item"><span class="btn Pagebtns" id="btn-minus">-</span></li>
-                                            <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
-                                            <li class="list-inline-item"><span class="btn Pagebtns" id="btn-plus">+</span></li>
+
+                                            
+                                            <li class="list-inline-item"> <asp:TextBox ID="txtQuantity" runat="server" Width="30px" Height="30px "></asp:TextBox> </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="row pb-3">
                                     <div class="col d-grid">
-                                        <button type="submit" class="btn Pagebtns btn-lg" name="submit" value="buy">Buy</button>
+                                        <asp:Button ID="btnBuy" runat="server" Text="Buy" CssClass="btn Pagebtns btn-lg " OnClick="btnBuy_Click"/>
                                     </div>
                                     <div class="col d-grid">
-                                        <button type="submit" class="btn Pagebtns btn-lg" name="submit" value="addtocard">Add To Cart</button>
+                                         <asp:Button ID="btnAddtocart" runat="server" Text="Add to Cart" CssClass="btn Pagebtns btn-lg " OnClick="btnAddtocart_Click" />
                                     </div>
                                 </div>
                             </form>

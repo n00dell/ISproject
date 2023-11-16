@@ -8,31 +8,23 @@ namespace Test2.Models
 
     public partial class Customer
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Customer()
-        {
-            Orders = new HashSet<Order>();
-        }
+        [Key]
+        public int Customer_Id { get; set; }
 
-        public int Id { get; set; }
-
-        [Required]
+        [StringLength(50)]
         public string FirstName { get; set; }
 
-        [Required]
+        [StringLength(50)]
         public string LastName { get; set; }
 
-        [Required]
+        [StringLength(50)]
         public string Email { get; set; }
 
         [Required]
-        public string Username {  get; set; }
+        [StringLength(50)]
+        public string Username { get; set; }
 
-        public string Phone { get; set; }
-
-        public string PasswordHash { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
+        [Required]
+        public string Password { get; set; }
     }
 }

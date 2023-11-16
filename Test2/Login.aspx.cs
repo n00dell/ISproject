@@ -10,6 +10,8 @@ using Microsoft.Ajax.Utilities;
 using static System.Collections.Specialized.BitVector32;
 using System.Configuration;
 using System.Security.AccessControl;
+using Test2.Models;
+using System.Web.Security;
 
 namespace Test2
 {
@@ -18,33 +20,10 @@ namespace Test2
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            lblErrorMessage.Visible = false;
-            if (Request.HttpMethod == "POST")
-            {
-                // Retrieve the password from the request
-                string password = Request.Form["password"];
-
-                // Perform authentication and respond accordingly
-                if (AuthenticateUser(password))
-                {
-                    Response.Write("success");
-                }
-                else
-                {
-                    Response.Write("failure");
-                }
-
-                Response.End();
-            }
+            lblError.Visible = false;
+          
         }
-        private bool AuthenticateUser(string password)
-        {
-            // Add your authentication logic here
-            // Validate the password against the database, and return true if it's valid
-            // Replace this with your actual authentication code
-            return false;
-        }
-
+      
         protected void btnLogin_Click(object sender, EventArgs e)
         {
 
@@ -53,53 +32,32 @@ namespace Test2
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            // Build your connection string
-            string connectionString = "Data Source=DESKTOP-K6BULSV\\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
-
-            // Create a connection to the database
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (var context = new Model1())
             {
-                connection.Open();
+                Customer user = context.Customers.FirstOrDefault(u => u.Username == username && u.Password == password);
 
-                // Perform authentication using a SQL command
-                string query = "SELECT* FROM UserRegistration WHERE Username = @Username AND Password = @Password";
-                using (SqlCommand cmd = new SqlCommand(query, connection))
+
+                if (user != null)
                 {
-                    cmd.Parameters.AddWithValue("@Username", username);
-                    cmd.Parameters.AddWithValue("@Password", HashPassword(password)); // Replace with your secure password hashing function
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            // Authentication successful
-                            int userId = reader.GetInt32(0);
-                            string authenticatedUsername = reader.GetString(1);
-
-                            // Store user information in session or redirect to a secure page
-                            Session["UserID"] = userId;
-                            Session["Username"] = authenticatedUsername;
-
-                            // Redirect to a secure page (e.g., user dashboard)
-                            Response.Redirect("Index.aspx");
-                        }
-                        else
-                        {
-                            // Authentication failed
-                            lblErrorMessage.Text = "Invalid username or password. Please try again.";
-                        }
-                    }
+                    FormsAuthentication.RedirectFromLoginPage(username, false);
+                    return;
                 }
+
+                // Verify the password
+                else
+                {
+                    lblError.Visible = true;
+                    return;
+                }
+
+
+
             }
+
         }
 
-        // Secure password hashing function (replace with your actual implementation)
-        private string HashPassword(string password)
-        {
-            // Implement your password hashing logic here (e.g., using a secure hashing library)
-            // Return the hashed password
-            return password; // Insecure placeholder; replace with secure hashing
-        }
+      
+      
     }
 }
         

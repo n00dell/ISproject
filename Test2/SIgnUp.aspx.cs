@@ -11,7 +11,7 @@ using Microsoft.Ajax.Utilities;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Windows.Forms;
-using BCrypt.Net;
+
 
 namespace Test2
 {
@@ -34,28 +34,28 @@ namespace Test2
             string email = txtEmail.Text;
 
 
-            using( var context = new Model1() )
+            using (var context = new Model1())
             {
-                if (context.Test2User.Any(u => u.Username == username))
+                if (context.Customers.Any(u => u.Username == username))
                 {
                     lblError.Text = "Username already exists";
                 }
-                if (context.Test2User.Any(u => u.Email == email))
+                if (context.Customers.Any(u => u.Email == email))
                 {
                     lblError.Text = "Username already exists";
                 }
 
-                Test2User user = new Test2User();
+                Customer user = new Customer();
                 user.Username = username;
                 user.Password = password;
                 user.FirstName = firstname;
                 user.LastName = lastname;
                 user.Email = email;
 
-                context.Test2User.Add(user);
+                context.Customers.Add(user);
                 context.SaveChanges();
             }
-            
+
         }
     }
 }
