@@ -34,24 +34,39 @@ namespace Test2
 
             using (var context = new Model1())
             {
-                Customer user = context.Customers.FirstOrDefault(u => u.Username == username && u.Password == password);
+                Customer user = context.Customers.FirstOrDefault(u => u.Username == username);
 
 
                 if (user != null)
                 {
-                    FormsAuthentication.RedirectFromLoginPage(username, false);
-                    return;
+                  if (VerifyPassword(password, user.Password ))
+                    {
+                        Response.Redirect("Index.aspx");
+                    }
+                    else
+                    {
+                        lblError.Text = "Wrong password";
+                    }
                 }
 
                 // Verify the password
                 else
                 {
-                    lblError.Visible = true;
-                    return;
+                    lblError.Text = "Wrong credentials";
                 }
 
 
 
+            }
+
+        }
+
+        private bool VerifyPassword(string password, string customerPassword)
+        {
+            using(var context = new Model1())
+            {
+                Customer user = context.Customers.FirstOrDefault(u => u.Password == password);
+                return password == customerPassword;
             }
 
         }
