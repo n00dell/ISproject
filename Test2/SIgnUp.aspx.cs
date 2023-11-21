@@ -54,6 +54,7 @@ namespace Test2
 
                 context.Customers.Add(user);
                 context.SaveChanges();
+
             }
 
         }

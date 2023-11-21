@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="adminDash.aspx.cs" Inherits="Test2.admin.admin_login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="adminProduct.aspx.cs" Inherits="Test2.admin.adminProduct" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Admin</title>
+    <title>Simple Responsive Admin</title>
 	<!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
@@ -50,7 +50,7 @@
 
 
                     <li class="active-link">
-                        <a href="adminDash.aspx" ><i class="fa fa-desktop "></i>Dashboard <span class="badge">Included</span></a>
+                        <a href="index.html" ><i class="fa fa-desktop "></i>Dashboard <span class="badge">Included</span></a>
                     </li>
                    
 
@@ -96,9 +96,61 @@
                
                    
                 
-                   
+                   <h3>Add Product</h3>
                  
-                  <!--Content-->
+            <table>
+
+                    <tr>
+                    <td>Product Name</td>
+                    <td><asp:TextBox ID="txtProductName" runat="server"></asp:TextBox></td>
+                     </tr>
+
+                    <tr>
+                        <td>Description</td>
+                        <td><asp:TextBox ID="txtDescription" runat="server"></asp:TextBox></td>
+                    </tr>
+
+                    <tr>
+                        <td>Category ID</td>
+                        <td><asp:TextBox ID="txtCategory" runat="server"></asp:TextBox></td>
+                    </tr>
+                 
+                    <tr>
+                        <td>Price</td>
+                        <td><asp:TextBox ID="txtPrice" runat="server"></asp:TextBox></td>
+                    </tr>
+                    
+                     
+                    
+
+
+                    <tr>
+                        <td>Color</td>
+                        <td><asp:TextBox ID="txtColor" runat="server"></asp:TextBox></td>
+                    </tr>
+ 
+                    <tr>
+                        <td>Brand</td>
+                        <td><asp:TextBox ID="txtBrand" runat="server"></asp:TextBox></td>
+                    </tr>   
+                
+                    <tr>
+                        <td>Long Description</td>
+                        <td><asp:TextBox ID="txtLongDesc" runat="server"></asp:TextBox></td>
+                    </tr>
+
+                        <tr>
+                        <td>Image</td>
+                        <td><asp:FileUpload ID="img1" runat="server" /></td>
+                    </tr>
+
+                <tr>
+                    <td colspan="2" align="center" >
+                        <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="btnUpload_Click"/>
+                    </td>
+                </tr>
+
+            </table>
                  
                 
                      
@@ -135,3 +187,4 @@
    </form>
 </body>
 </html>
+

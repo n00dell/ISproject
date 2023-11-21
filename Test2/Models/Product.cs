@@ -22,13 +22,14 @@ namespace Test2.Models
 
         public int Product_Price { get; set; }
 
-        [Column(TypeName = "image")]
-        public byte[] Image1 { get; set; }
+        public string Image1 { get; set; }
 
-        [Column(TypeName = "image")]
-        public byte[] Image2 { get; set; }
+        [StringLength(50)]
+        public string Product_Brand { get; set; }
 
-        [Column(TypeName = "image")]
-        public byte[] Image3 { get; set; }
+        public string Long_Description { get; set; }
+
+        [StringLength(50)]
+        public string Color { get; set; }
     }
 }
