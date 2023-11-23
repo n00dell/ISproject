@@ -11,11 +11,13 @@ namespace Test2
     public partial class Description : System.Web.UI.Page
     {
         int Id;
+        String Product_name, Product_Description, Product_Brand,Image1;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-          Id  = Convert.ToInt32(Request.QueryString["Product_Id"]);
+          Id  = Convert.ToInt32(Request.QueryString["Id"]);
             var context = new Model1();
-            var product = new List<Product>();
+            var product = context.Products.Where(p => p.Product_Id == Id).ToList();
 
             RepeaterDesc.DataSource = product;
             RepeaterDesc.DataBind();
@@ -29,6 +31,12 @@ namespace Test2
 
         protected void btnAddtocart_Click(object sender, EventArgs e)
         {
+            Id = Convert.ToInt32(Request.QueryString["Id"]);
+            var context = new Model1();
+            var product = context.Products.Where(p => p.Product_Id == Id).ToList();
+
+        Product_name = product.["Product_Name"].ToString();
+            
 
         }
     }
