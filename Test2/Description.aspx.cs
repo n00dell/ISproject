@@ -35,7 +35,7 @@ namespace Test2
             var context = new Model1();
             var product = context.Products.Where(p => p.Product_Id == Id).ToList();
 
-        Product_name = product.["Product_Name"].ToString();
+           
             
 
         }
