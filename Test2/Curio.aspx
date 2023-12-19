@@ -29,7 +29,7 @@
                 <div class="ad-title m-auto">
                     <h5><%# Eval("Product_Name") %></h5>
                 </div>
-               <a class="ad-btn " href="Description.aspx">View</a>
+               <a class="ad-btn " href="Description.aspx?Id=<%# Eval("Product_Id") %>">View</a>
             </div>
         </div>
     </div>
