@@ -35,8 +35,10 @@ namespace Test2
             var context = new Model1();
             var product = context.Products.Where(p => p.Product_Id == Id).ToList();
 
-           
-            
+            RepeaterDesc.DataSource = product;
+            RepeaterDesc.DataBind();
+
+
 
         }
     }
