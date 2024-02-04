@@ -136,7 +136,7 @@
                 
                     <tr>
                         <td>Long Description</td>
-                        <td><asp:TextBox ID="txtLongDesc" runat="server"></asp:TextBox></td>
+                        <td><asp:TextBox ID="txtLongDesc" runat="server" ></asp:TextBox></td>
                     </tr>
 
                         <tr>
@@ -153,7 +153,32 @@
             </table>
                  
                 
-                     
+                     <table>
+                         <tr>
+                             <th>Category Id</th>
+                             <th>Category Name</th>
+                         </tr>
+
+                         <tr>
+                             <td>1</td>
+                             <td>Clothes</td>
+                         </tr>
+
+                         <tr>
+                             <td>2</td>
+                             <td>Furniture</td>
+                         </tr>
+
+                         <tr>
+                             <td>3</td>
+                             <td>Watches</td>
+                         </tr>
+
+                         <tr>
+                             <td>4</td>
+                             <td>Curio</td>
+                         </tr>
+                     </table>
                 
                      
                      
