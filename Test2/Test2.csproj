@@ -489,6 +489,8 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\CartItem.cs" />
+    <Compile Include="Models\CartModel.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Model1.cs" />
@@ -498,6 +500,7 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\sysdiagram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShoppingCart.cs" />
     <Compile Include="SIgnUp.aspx.cs">
       <DependentUpon>SIgnUp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

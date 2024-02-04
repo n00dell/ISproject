@@ -47,6 +47,7 @@ namespace Test2
                     {
                         lblError.Text = "Wrong password";
                     }
+                    Session["username"] = username;
                 }
 
                 // Verify the password
@@ -54,8 +55,12 @@ namespace Test2
                 {
                     lblError.Text = "Wrong credentials";
                 }
+                if (username == "admin" && password == "admin")
+                {
+                    Response.Redirect("admin/AdminLogin.aspx");
+                }
 
-
+               
 
             }
 
