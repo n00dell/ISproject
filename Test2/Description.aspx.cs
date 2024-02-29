@@ -31,30 +31,21 @@ namespace Test2
 
         protected void btnAddtocart_Click(object sender, EventArgs e)
         {
-            //Id = Convert.ToInt32(Request.QueryString["Id"]);
-
-           
-
-            //int quantity = Convert.ToInt32("txtQuantity");
-            //int price;
-
-            //var context = new Model1();
-            //var product = context.Products.FirstOrDefault()
-            //{
-            //    price = 
-            //};
-
-            //var orderDetails = new OrderDetail()
-            //{
-            //    Product_Id = Id,
-            //    Product_Quantity = quantity,
-            //    Subtotal = 
-            //};
-
-            
-
-            
-
+        //i want the user to be logged in before adding to cart
+            if(Login== true)
+            {
+                var context = new Model1();
+                var cart = new OrderDetail();
+                cart.Product_Id = Id;
+                cart.Product_Quantity = 1;
+                context.OrderDetails.Add(cart);
+                context.SaveChanges();
+                Response.Redirect("Cart.aspx");
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
 
         }
     }

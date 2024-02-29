@@ -1,83 +1,52 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="Test2.Cart" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
- 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12 col-md-10 col-md-offset-1">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th class="text-center">Price</th>
-                        <th class="text-center">Total</th>
-                        <th> </th>
-                    </tr>
-                </thead>
-                <tbody>
-                   
-               
-                    <asp:Repeater ID="RepeaterCart" runat="server">
-    <tr>
-        <td class="col-sm-8 col-md-6">
-        <div class="media">
-            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="<%# Eval("Image1") %>" style="width: 72px; height: 72px;"> </a>
-            <div class="media-body">
-                <h4 class="media-heading"><a href="#"><%# Eval("Product_Name") %></a></h4>
-                <h5 class="media-heading"> by <a href="#"><%# Eval("Product_Brand") %></a></h5>
-                <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
-            </div>
-        </div></td>
-        <td class="col-sm-1 col-md-1" style="text-align: center">
-        <input type="number" class="form-control" value="<%# Eval("Product_Quantity") %>">
-        </td>
-        <td class="col-sm-1 col-md-1 text-center"><strong><%# Eval("Product_Price", "{0:C}") %></strong></td>
-        <td class="col-sm-1 col-md-1 text-center"><strong><%# Eval("Subtotal", "{0:C}") %></strong></td>
-        <td class="col-sm-1 col-md-1">
-        <button type="button" class="btn Pagebtns" onclick="removeFromCart(<%# Eval("Product_Id") %>)">
-            <span class="glyphicon glyphicon-remove"></span> Remove
-        </button></td>
-    </tr>
-</asp:Repeater>
-
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td><h5>Subtotal</h5></td>
-                        <td class="text-right"><h5><strong></strong></h5></td>
-                    </tr>
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td><h5>Estimated shipping</h5></td>
-                        <td class="text-right"><h5><strong></strong></h5></td>
-                    </tr>
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td><h3>Total</h3></td>
-                        <td class="text-right"><h3><strong>@Model.Cart.Total.ToString("C")</strong></h3></td>
-                    </tr>
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>
-                        <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
-                        </button></td>
-                        <td>
-                        <button type="button" class="btn btn-success" onclick="checkout()">
-                            Checkout <span class="glyphicon glyphicon-play"></span>
-                        </button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-
+    <asp:Repeater ID="RepeaterCart" runat="server">
+<div class="cart_section">
+     <div class="container-fluid">
+         <div class="row">
+             <div class="col-lg-10 offset-lg-1">
+                 <div class="cart_container">
+                     <div class="cart_title">Shopping Cart</div>
+                     <div class="cart_items">
+                         <ul class="cart_list">
+                             <li class="cart_item clearfix">
+                                 <div class="cart_item_image"><img src='<%# Eval ("Image1")  %>'></div>
+                                 <div class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                     <div class="cart_item_name cart_info_col">
+                                         <div class="cart_item_title">Name</div>
+                                         <div class="cart_item_text"><%# Eval ("ProductName") %>'</div>
+                                     </div>
+                                     <div class="cart_item_color cart_info_col">
+                                         <div class="cart_item_title">Color</div>
+                                         <div class="cart_item_text"><span style="background-color:#999999;"></span>Silver</div>
+                                     </div>
+                                     <div class="cart_item_quantity cart_info_col">
+                                         <div class="cart_item_title">Quantity</div>
+                                         <div class="cart_item_text">1</div>
+                                     </div>
+                                     <div class="cart_item_price cart_info_col">
+                                         <div class="cart_item_title">Price</div>
+                                         <div class="cart_item_text">₹22000</div>
+                                     </div>
+                                     <div class="cart_item_total cart_info_col">
+                                         <div class="cart_item_title">Total</div>
+                                         <div class="cart_item_text">₹22000</div>
+                                     </div>
+                                 </div>
+                             </li>
+                         </ul>
+                     </div>
+                     <div class="order_total">
+                         <div class="order_total_content text-md-right">
+                             <div class="order_total_title">Order Total:</div>
+                             <div class="order_total_amount">₹22000</div>
+                         </div>
+                     </div>
+                     <div class="cart_buttons"> <button type="button" class="button cart_button_clear">Continue Shopping</button> <button type="button" class="button cart_button_checkout">Add to Cart</button> </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+        </asp:Repeater>
 </asp:Content>
