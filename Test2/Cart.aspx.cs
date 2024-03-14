@@ -12,46 +12,38 @@ namespace Test2
     public partial class Cart : System.Web.UI.Page
     {
 
-        CartModel context = new CartModel();
-        
- 
-            protected void Page_Load(object sender, EventArgs e)
+
+
+
+        protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                // Get the cart from the cookie
-                //var cart = GetCartFromCookie();
+                using (var context = new CartModel())
+                using (var context2 = new Model1())
+                {
+                    var cartItems = from c in context.CartItems
+                                    join p in context2.Products on c.ProductId equals p.Product_Id
+                                    select new
+                                    {
+                                        c.ItemId,
+                                        c.ProductId,
+                                        c.Quantity,
+                                        p.Product_Name,
+                                        p.Product_Price,
+                                        p.Image1
+                                    };
 
-                //Bind the cart items to the repeater
-            //    RepeaterCart.DataSource = cart.Items;
-            //    RepeaterCart.DataBind();
-            //}
+                    RepeaterCart.DataSource = cartItems;
+                    RepeaterCart.DataBind();
+                }
+            }
         }
 
-        public void AddToCart(int productId, int quantity)
-        {
-            // Get the existing cart from the cookie
-            var context = new Model1();
-            //var cart = GetCartFromCookie();
 
-            // Add the new item to the cart
-            var item = new OrderDetail {
-                Product_Id = productId,
-                Product_Quantity = quantity,
 
-            };
-            context.OrderDetails.Add(item);
-
-            // Store the updated cart in the cookie
-            //SetCartCookie(cart);
-        }
-
-  
 
     }
-
-
-
 }
 
 
