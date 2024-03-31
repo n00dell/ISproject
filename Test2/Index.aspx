@@ -9,7 +9,7 @@
 
     </style>
     
-    <div><p>Welcome, <%= User.Identity.Name %>!</p></div>
+
         
   
 
